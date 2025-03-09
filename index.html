@@ -59,22 +59,25 @@
 <div class="container">
     <h1>Üdv az Elli Tudásbázisban!</h1>
     <p>Itt fogod tárolni és fejleszteni a mesterséges intelligencia tudását.</p>
-    <p id="datum"></p> <!-- IDE KERÜL A DÁTUM -->
 
-    <ul>
-        <li><a href="https://github.com/Zeedorf0211/Elli-tud-sb-zis/blob/main/Elli.html" target="_blank">Elli jellemzői</a></li>
-        <li><a href="https://github.com/Zeedorf0211/Elli-tud-sb-zis/blob/main/Tudasbazis.md" target="_blank">Tudásbázis</a></li>
-        <li><a href="https://github.com/Zeedorf0211/Elli-tud-sb-zis/blob/main/Rolatok.md" target="_blank">Rólatok</a></li>
-    </ul>
-</div>
+<p id="datum">Betöltés...</p>
 
 <script>
     function frissitsIdot() {
         const most = new Date();
-        const opciok = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const opciok = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit' 
+        };
         document.getElementById("datum").innerText = most.toLocaleDateString("hu-HU", opciok);
     }
-    
-    frissitsIdot();
-    setInterval(frissitsIdot, 1000);
+
+    window.onload = function() {
+        frissitsIdot();
+        setInterval(frissitsIdot, 1000);
+    };
 </script>
